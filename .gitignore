@@ -1,0 +1,21 @@
+# PlatformIO build artifacts
+.pio/
+.vscode/
+*.o
+*.elf
+
+# macOS
+.DS_Store
+
+# Python venvs / caches
+**/venv/
+**/ttsvenv/
+**/__pycache__/
+*.pyc
+
+# Node / Wrangler
+node_modules/
+cloud/terra-relay/.wrangler/
+
+# Secrets — the keys that control Terra (kept out of git even though repo is private)
+cloud/terra-relay/.secrets

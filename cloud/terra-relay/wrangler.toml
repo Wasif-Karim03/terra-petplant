@@ -1,0 +1,14 @@
+name = "terra-relay"
+main = "src/worker.js"
+compatibility_date = "2024-11-01"
+workers_dev = true
+account_id = "cd0c63876f35a3aa92fbfc124bf6fa6f"
+
+# Secrets in plain vars — fine for a single personal unit (they only guard one plant).
+[vars]
+DEVICE_KEY  = "a140bae408bb79315ffbc34eb1192b70"
+OWNER_TOKEN = "6d64cb76521d7afe799274fd"
+
+[[kv_namespaces]]
+binding = "TERRA"
+id = "3b06fb19a64045d7ae0c4a5f5b0a1c85"

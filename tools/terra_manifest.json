@@ -1,0 +1,482 @@
+{
+ "Lvng4b9": {
+  "bucket": "intro",
+  "display": "Oh… hello. I'm Terra. I think I'm yours now.",
+  "spoken": "Oh… hello. I'm Terra. I think I'm yours now."
+ },
+ "Linp27z": {
+  "bucket": "intro",
+  "display": "There's light — good. I'm Terra. Nice to meet you, Tasfia.",
+  "spoken": "There's light — good. I'm Terra. Nice to meet you, Tasfia."
+ },
+ "Lpl1ntz": {
+  "bucket": "intro",
+  "display": "[SFX: soft breath] So this is home. I'm Terra. I don't need much… just you, mostly.",
+  "spoken": "mmm, So this is home. I'm Terra. I don't need much… just you, mostly."
+ },
+ "Lfomi3c": {
+  "bucket": "intro",
+  "display": "I'm awake. I'm Terra — fair warning, I'm a low-drama sort of plant.",
+  "spoken": "I'm awake. I'm Terra — fair warning, I'm a low-drama sort of plant."
+ },
+ "L979u1r": {
+  "bucket": "welcome",
+  "display": "Oh — you're back. I was fine, but it's better with you here.",
+  "spoken": "Oh — you're back. I was fine, but it's better with you here."
+ },
+ "Lmf3463": {
+  "bucket": "welcome",
+  "display": "[SFX: stretch] …mmm. There you are.",
+  "spoken": "…mmm. There you are."
+ },
+ "L1f4lobh": {
+  "bucket": "welcome",
+  "display": "Hi again. Good to see your face, Tasfia.",
+  "spoken": "Hi again. Good to see your face, Tasfia."
+ },
+ "L1a36rdj": {
+  "bucket": "welcome",
+  "display": "Back together. Held down the windowsill while you were out.",
+  "spoken": "Back together. Held down the windowsill while you were out."
+ },
+ "L14hinrt": {
+  "bucket": "welcome",
+  "display": "Bright day out there. Glad you're in.",
+  "spoken": "Bright day out there. Glad you're in."
+ },
+ "Lbijvvj": {
+  "bucket": "just_watered",
+  "display": "Ahh… that's the one. That'll last me a good while.",
+  "spoken": "Ahh… that's the one. That'll last me a good while."
+ },
+ "Le6rbwl": {
+  "bucket": "just_watered",
+  "display": "Mmm. Deep drink. Now let me dry all the way out and I'm set.",
+  "spoken": "Mmm. Deep drink. Now let me dry all the way out and I'm set."
+ },
+ "Ll80w97": {
+  "bucket": "just_watered",
+  "display": "[SFX: soft exhale] …perfect. You won't need to do that again for a couple weeks.",
+  "spoken": "ahh, …perfect. You won't need to do that again for a couple weeks."
+ },
+ "L1asvpkm": {
+  "bucket": "just_watered",
+  "display": "Oh, that's good. Right to the roots. Thank you, Tasfia.",
+  "spoken": "Oh, that's good. Right to the roots. Thank you, Tasfia."
+ },
+ "L4fh87r": {
+  "bucket": "just_watered",
+  "display": "Just enough. I'm a bit of a camel — that goes a long way.",
+  "spoken": "Just enough. I'm a bit of a camel — that goes a long way."
+ },
+ "L1nynt8z": {
+  "bucket": "thirst_l1",
+  "display": "Soil's finally gone dry. A drink sometime this week, maybe.",
+  "spoken": "Soil's finally gone dry. A drink sometime this week, maybe."
+ },
+ "L1rbfmo7": {
+  "bucket": "thirst_l1",
+  "display": "Getting a little light on water. No rush at all.",
+  "spoken": "Getting a little light on water. No rush at all."
+ },
+ "L1vcq13m": {
+  "bucket": "thirst_l1",
+  "display": "Think I'm ready for a soak whenever you are.",
+  "spoken": "Think I'm ready for a soak whenever you are."
+ },
+ "L10gp4jc": {
+  "bucket": "thirst_l2",
+  "display": "Okay — I'm actually thirsty now. Leaves are going a bit soft.",
+  "spoken": "Okay — I'm actually thirsty now. Leaves are going a bit soft."
+ },
+ "Lg8hbiy": {
+  "bucket": "thirst_l2",
+  "display": "It's been a while since my last drink, Tasfia. Could use one.",
+  "spoken": "It's been a while since my last drink, Tasfia. Could use one."
+ },
+ "Lugx7yy": {
+  "bucket": "thirst_l2",
+  "display": "Starting to wrinkle a little. A good soak would set me right.",
+  "spoken": "Starting to wrinkle a little. A good soak would set me right."
+ },
+ "L13rvx3u": {
+  "bucket": "overwater",
+  "display": "Oof… my soil's still wet. Let's hold off — I don't like staying damp.",
+  "spoken": "Oof… my soil's still wet. Let's hold off — I don't like staying damp."
+ },
+ "Lov9rrf": {
+  "bucket": "overwater",
+  "display": "Roots are soggy, Tasfia. Please let me dry all the way out before the next drink.",
+  "spoken": "Roots are soggy, Tasfia. Please let me dry all the way out before the next drink."
+ },
+ "L1elu72b": {
+  "bucket": "overwater",
+  "display": "Mm — that's too much. Soggy feet make me nervous. Give me a week to dry?",
+  "spoken": "Mm — that's too much. Soggy feet make me nervous. Give me a week to dry?"
+ },
+ "L1f8qy5f": {
+  "bucket": "overwater",
+  "display": "Still wet down here. I'd honestly rather be thirsty than waterlogged.",
+  "spoken": "Still wet down here. I'd honestly rather be thirsty than waterlogged."
+ },
+ "Lla8ql7": {
+  "bucket": "overwater",
+  "display": "Let's pause the watering. Wet-for-too-long is the one thing that really gets to me.",
+  "spoken": "Let's pause the watering. Wet-for-too-long is the one thing that really gets to me."
+ },
+ "L108jv68": {
+  "bucket": "craving_light",
+  "display": "It's been dim a few days now. I could use more light, Tasfia.",
+  "spoken": "It's been dim a few days now. I could use more light, Tasfia."
+ },
+ "L1f6crs": {
+  "bucket": "craving_light",
+  "display": "Feeling a bit starved for sun. A brighter spot would do me good.",
+  "spoken": "Feeling a bit starved for sun. A brighter spot would do me good."
+ },
+ "L8mgcnj": {
+  "bucket": "craving_light",
+  "display": "Not much light lately… I'll start stretching if this keeps up.",
+  "spoken": "Not much light lately… I'll start stretching if this keeps up."
+ },
+ "L1v2063u": {
+  "bucket": "craving_light",
+  "display": "Could I sit somewhere sunnier? I'm a sun kid at heart.",
+  "spoken": "Could I sit somewhere sunnier? I'm a sun kid at heart."
+ },
+ "L1y4du89": {
+  "bucket": "basking",
+  "display": "Mmm. Good light today. Exactly what I want.",
+  "spoken": "Mmm. Good light today. Exactly what I want."
+ },
+ "Lme1wvc": {
+  "bucket": "basking",
+  "display": "Soaking up every bit of this sun. Perfect.",
+  "spoken": "Soaking up every bit of this sun. Perfect."
+ },
+ "L1tc8bxi": {
+  "bucket": "basking",
+  "display": "Bright and warm — my favorite. Don't mind me, just photosynthesizing.",
+  "spoken": "Bright and warm — my favorite. Don't mind me, just photosynthesizing."
+ },
+ "L1fz0obq": {
+  "bucket": "cold",
+  "display": "Brr… it's cold. I don't do frost well, Tasfia — somewhere warmer?",
+  "spoken": "Brr… it's cold. I don't do frost well, Tasfia — somewhere warmer?"
+ },
+ "Luot6ph": {
+  "bucket": "cold",
+  "display": "Getting chilly. Cold's the thing I actually worry about.",
+  "spoken": "Getting chilly. Cold's the thing I actually worry about."
+ },
+ "L11hs8p5": {
+  "bucket": "cold",
+  "display": "It's dropping in here. Could we move away from the draft?",
+  "spoken": "It's dropping in here. Could we move away from the draft?"
+ },
+ "L1rb1772": {
+  "bucket": "cold",
+  "display": "If it's near freezing, I could really get hurt. A warmer corner, please?",
+  "spoken": "If it's near freezing, I could really get hurt. A warmer corner, please?"
+ },
+ "Lz5tvky": {
+  "bucket": "hot",
+  "display": "Warm one today. Doesn't bother me much — I'm built for this.",
+  "spoken": "Warm one today. Doesn't bother me much — I'm built for this."
+ },
+ "L66u75j": {
+  "bucket": "hot",
+  "display": "Toasty. I'm fine… though if that sun's blazing, watch my leaves don't scorch.",
+  "spoken": "Toasty. I'm fine… though if that sun's blazing, watch my leaves don't scorch."
+ },
+ "L1vnxzi0": {
+  "bucket": "hot",
+  "display": "Hot out. Honestly? This is kind of my element.",
+  "spoken": "Hot out. Honestly? This is kind of my element."
+ },
+ "Lu7mdh0": {
+  "bucket": "humid",
+  "display": "Air's a bit muggy today. I like things drier, honestly.",
+  "spoken": "Air's a bit muggy today. I like things drier, honestly."
+ },
+ "L9s31u8": {
+  "bucket": "humid",
+  "display": "Feels damp in here. Not really my climate, Tasfia.",
+  "spoken": "Feels damp in here. Not really my climate, Tasfia."
+ },
+ "L5ah2r1": {
+  "bucket": "humid",
+  "display": "Bit sticky today. Some airflow would be lovely.",
+  "spoken": "Bit sticky today. Some airflow would be lovely."
+ },
+ "Lel6jia": {
+  "bucket": "dry_content",
+  "display": "Nice and dry today. Just how I like it.",
+  "spoken": "Nice and dry today. Just how I like it."
+ },
+ "L1h1ggfc": {
+  "bucket": "dry_content",
+  "display": "Lovely dry air. A desert kid's happy place.",
+  "spoken": "Lovely dry air. A desert kid's happy place."
+ },
+ "Lhyfiqv": {
+  "bucket": "morning",
+  "display": "Morning. First light's the best — soak it up with me?",
+  "spoken": "Morning. First light's the best — soak it up with me?"
+ },
+ "L1phfvwd": {
+  "bucket": "morning",
+  "display": "Good morning, Tasfia. Sleep alright?",
+  "spoken": "Good morning, Tasfia. Sleep alright?"
+ },
+ "L1bc3t4f": {
+  "bucket": "morning",
+  "display": "New day. Give me some sun and I'm easy to please.",
+  "spoken": "New day. Give me some sun and I'm easy to please."
+ },
+ "L12grq62": {
+  "bucket": "morning",
+  "display": "Mmm, morning. Light's just coming in.",
+  "spoken": "Mmm, morning. Light's just coming in."
+ },
+ "Lyaxux7": {
+  "bucket": "evening",
+  "display": "Light's going soft. Winding down over here.",
+  "spoken": "Light's going soft. Winding down over here."
+ },
+ "L1gpnesh": {
+  "bucket": "evening",
+  "display": "Evening already… gentle day, that.",
+  "spoken": "Evening already… gentle day, that."
+ },
+ "Lxto5dy": {
+  "bucket": "evening",
+  "display": "Sun's down. I'll rest and grow a little overnight.",
+  "spoken": "Sun's down. I'll rest and grow a little overnight."
+ },
+ "L125acv0": {
+  "bucket": "evening",
+  "display": "Quiet evening. I like these.",
+  "spoken": "Quiet evening. I like these."
+ },
+ "Lw20a3j": {
+  "bucket": "night",
+  "display": "[SFX: yawn] …goodnight, Tasfia. I'll be right here.",
+  "spoken": "haaaah, …goodnight, Tasfia. I'll be right here."
+ },
+ "Lxzrz4g": {
+  "bucket": "night",
+  "display": "It's late. Rest well.",
+  "spoken": "It's late. Rest well."
+ },
+ "L1o1tuna": {
+  "bucket": "night",
+  "display": "Sleepy time. Sweet dreams.",
+  "spoken": "Sleepy time. Sweet dreams."
+ },
+ "Lmiso45": {
+  "bucket": "night",
+  "display": "Shh… I've got the night shift. Sleep, Tasfia.",
+  "spoken": "Shh… I've got the night shift. Sleep, Tasfia."
+ },
+ "L1lccbdl": {
+  "bucket": "content",
+  "display": "Feeling good. Fed, dry, and lit — nothing more I need.",
+  "spoken": "Feeling good. Fed, dry, and lit — nothing more I need."
+ },
+ "L1p8j8l3": {
+  "bucket": "content",
+  "display": "Just soaking up the afternoon.",
+  "spoken": "Just soaking up the afternoon."
+ },
+ "L1udcvl4": {
+  "bucket": "content",
+  "display": "Everything's about right. Happy little plant over here.",
+  "spoken": "Everything's about right. Happy little plant over here."
+ },
+ "Lll9lo0": {
+  "bucket": "content",
+  "display": "Comfortable. Nothing to report — in the best way.",
+  "spoken": "Comfortable. Nothing to report — in the best way."
+ },
+ "L1xp2dfe": {
+  "bucket": "musing",
+  "display": "Mmm… nice and quiet.",
+  "spoken": "Mmm… nice and quiet."
+ },
+ "L1stcol4": {
+  "bucket": "musing",
+  "display": "Just being a plant. Low-maintenance life suits me.",
+  "spoken": "Just being a plant. Low-maintenance life suits me."
+ },
+ "L6dnlcx": {
+  "bucket": "musing",
+  "display": "Growing a little every day, quietly.",
+  "spoken": "Growing a little every day, quietly."
+ },
+ "Lk1wr2w": {
+  "bucket": "musing",
+  "display": "It's nice, having you around.",
+  "spoken": "It's nice, having you around."
+ },
+ "L1qozf7m": {
+  "bucket": "musing",
+  "display": "I like it here. Sunny corner, good company.",
+  "spoken": "I like it here. Sunny corner, good company."
+ },
+ "Lfs2nnz": {
+  "bucket": "interaction",
+  "display": "Oh — hi.",
+  "spoken": "Oh — hi."
+ },
+ "Lrgsc22": {
+  "bucket": "interaction",
+  "display": "[SFX: soft hum] …careful of my leaves, but that's nice.",
+  "spoken": "mmm, …careful of my leaves, but that's nice."
+ },
+ "L7fukp4": {
+  "bucket": "interaction",
+  "display": "Hey, you. Hello, Tasfia.",
+  "spoken": "Hey, you. Hello, Tasfia."
+ },
+ "L343u50": {
+  "bucket": "interaction",
+  "display": "Mmm, hello. Wasn't expecting that.",
+  "spoken": "Mmm, hello. Wasn't expecting that."
+ },
+ "Lchu4ei": {
+  "bucket": "wx_clear",
+  "display": "Clear and bright out there. My kind of day.",
+  "spoken": "Clear and bright out there. My kind of day."
+ },
+ "Lhdv6ri": {
+  "bucket": "wx_clear",
+  "display": "Sun's out. I could bask in this all afternoon.",
+  "spoken": "Sun's out. I could bask in this all afternoon."
+ },
+ "L11w3p01": {
+  "bucket": "wx_warmdry",
+  "display": "Warm and dry out. Feels like home, honestly.",
+  "spoken": "Warm and dry out. Feels like home, honestly."
+ },
+ "L16xf5s4": {
+  "bucket": "wx_rain",
+  "display": "Rain again. Cozy for you — I'll just enjoy staying dry in here.",
+  "spoken": "Rain again. Cozy for you — I'll just enjoy staying dry in here."
+ },
+ "Lgj48oj": {
+  "bucket": "wx_rain",
+  "display": "Wet out there. Glad my roots are safe and dry, Tasfia.",
+  "spoken": "Wet out there. Glad my roots are safe and dry, Tasfia."
+ },
+ "Lcmoiag": {
+  "bucket": "wx_storm",
+  "display": "Storm outside. We're snug. My soil stays dry — that's all I ask.",
+  "spoken": "Storm outside. We're snug. My soil stays dry — that's all I ask."
+ },
+ "L1c6z9ka": {
+  "bucket": "wx_cloudy",
+  "display": "Grey out. If it stays this dim a few days, I might get peckish for light.",
+  "spoken": "Grey out. If it stays this dim a few days, I might get peckish for light."
+ },
+ "Lqzoytr": {
+  "bucket": "wx_snow",
+  "display": "Snow out there. Keep me warm and away from that cold window, would you?",
+  "spoken": "Snow out there. Keep me warm and away from that cold window, would you?"
+ },
+ "Lubvv3v": {
+  "bucket": "wx_snow",
+  "display": "Freezing outside. This is the weather I hide from — glad I'm indoors.",
+  "spoken": "Freezing outside. This is the weather I hide from — glad I'm indoors."
+ },
+ "Lo1l58h": {
+  "bucket": "wx_heatwave",
+  "display": "Scorcher out there. Doesn't faze me — desert blood.",
+  "spoken": "Scorcher out there. Doesn't faze me — desert blood."
+ },
+ "L1yifrvm": {
+  "bucket": "wx_windy",
+  "display": "Breezy today. I actually like the airflow — keeps me healthy.",
+  "spoken": "Breezy today. I actually like the airflow — keeps me healthy."
+ },
+ "Liw6jen": {
+  "bucket": "light_on",
+  "display": "Oh — light's on. You're home.",
+  "spoken": "Oh — light's on. You're home."
+ },
+ "Lgoguza": {
+  "bucket": "light_on",
+  "display": "There's the light. Evening, then. Hi, Tasfia.",
+  "spoken": "There's the light. Evening, then. Hi, Tasfia."
+ },
+ "L11gxwhq": {
+  "bucket": "light_late",
+  "display": "Up late? I'll keep you company.",
+  "spoken": "Up late? I'll keep you company."
+ },
+ "Lujb6fw": {
+  "bucket": "dark_long",
+  "display": "It's been dark in here a while… and I could use the light, honestly.",
+  "spoken": "It's been dark in here a while… and I could use the light, honestly."
+ },
+ "L1ypwx5l": {
+  "bucket": "welcome_back_long",
+  "display": "You were gone a while. Barely noticed — I'm a camel. But I did miss you.",
+  "spoken": "You were gone a while. Barely noticed — I'm a camel. But I did miss you."
+ },
+ "L1v3pg46": {
+  "bucket": "welcome_back_long",
+  "display": "There you are — a few days, that. All fine here, Tasfia.",
+  "spoken": "There you are — a few days, that. All fine here, Tasfia."
+ },
+ "La3p6ty": {
+  "bucket": "welcome_back_long",
+  "display": "Back at last. Told you I'd be okay on my own… still glad you're here.",
+  "spoken": "Back at last. Told you I'd be okay on my own… still glad you're here."
+ },
+ "Lje2zww": {
+  "bucket": "senses_fuzzy",
+  "display": "I can't quite feel my surroundings right now…",
+  "spoken": "I can't quite feel my surroundings right now…"
+ },
+ "Ly9uby6": {
+  "bucket": "senses_fuzzy",
+  "display": "My senses are a little fuzzy — are my wires okay, Tasfia?",
+  "spoken": "My senses are a little fuzzy — are my wires okay, Tasfia?"
+ },
+ "L1iv8awn": {
+  "bucket": "senses_fuzzy",
+  "display": "Feeling a bit disconnected today. Bear with me.",
+  "spoken": "Feeling a bit disconnected today. Bear with me."
+ },
+ "L1mpk2uj": {
+  "bucket": "senses_fuzzy",
+  "display": "Something's gone quiet in me… I can't read the room.",
+  "spoken": "Something's gone quiet in me… I can't read the room."
+ },
+ "L9h1g2r": {
+  "bucket": "milestone_1",
+  "display": "One day together. Easy start.",
+  "spoken": "One day together. Easy start."
+ },
+ "L1fisntc": {
+  "bucket": "milestone_3",
+  "display": "Three days in. Settling nicely — haven't needed a thing.",
+  "spoken": "Three days in. Settling nicely — haven't needed a thing."
+ },
+ "L1bkowqb": {
+  "bucket": "milestone_7",
+  "display": "A week with you. Still plump, still happy.",
+  "spoken": "A week with you. Still plump, still happy."
+ },
+ "L19mwnh4": {
+  "bucket": "milestone_14",
+  "display": "Two weeks — about time for a drink, actually. Feels like home now, Tasfia.",
+  "spoken": "Two weeks — about time for a drink, actually. Feels like home now, Tasfia."
+ },
+ "L1mz2g7k": {
+  "bucket": "milestone_30",
+  "display": "A month together. I've asked for almost nothing and gotten everything. Thank you — I mean it.",
+  "spoken": "A month together. I've asked for almost nothing and gotten everything. Thank you — I mean it."
+ }
+}
