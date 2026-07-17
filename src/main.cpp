@@ -36,7 +36,9 @@
 
 // Set to 1 once the GC9A01 display is physically wired. Kept 0 until then so the
 // firmware doesn't waste SPI bandwidth (and slow the web server) drawing to nothing.
+#ifndef ENABLE_DISPLAY          // overridable by build flag (the v2 env sets it to 1)
 #define ENABLE_DISPLAY 0
+#endif
 
 // ---- WiFi ----
 const char *WIFI_SSID = "CaseRegistered";   // open network (no password)
