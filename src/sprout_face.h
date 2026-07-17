@@ -271,3 +271,8 @@ static void faceDisplaySetup(){
   Serial.println("[DISP] GC9A01 ready");
 }
 static inline void faceDisplayRender(const String& emo, bool offline, unsigned long t){ drawFaceHW(emo,offline,t); }
+
+// ---- display interface implementation (v1 driver: GC9A01 color round) ----
+void displaySetup()                                                 { faceDisplaySetup(); }
+void displayRenderFace(const String &emo, bool offline, uint32_t t) { faceDisplayRender(emo, offline, t); }
+void displaySetCaption(const String &text, uint32_t ms)             { faceSetCaption(text, ms); }

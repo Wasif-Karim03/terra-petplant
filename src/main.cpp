@@ -30,7 +30,7 @@
 #include <AudioFileSourceLittleFS.h>  // on-device MP3 voice playback
 #include <AudioGeneratorMP3.h>
 #include <AudioOutputI2S.h>
-#include "sprout_face.h"   // GC9A01 renderer (draws Sprout on the round display)
+#include "display.h"       // thin display interface (driver chosen by DISPLAY_DRIVER)
 #include "phrasebank.h"    // generated: buckets + clip filenames (match data/audio/)
 #include "plants.h"        // curated plant-care database (thresholds + care guide)
 
@@ -1943,7 +1943,7 @@ void setup() {
   voiceBegin();          // on-device voice engine (I2S audio + phrasebank + NVS memory)
 
 #if ENABLE_DISPLAY
-  faceDisplaySetup();   // GC9A01 round display
+  displaySetup();       // panel driver chosen by DISPLAY_DRIVER (v1 = GC9A01 round)
 #endif
 
   connectWiFi();
@@ -1963,7 +1963,7 @@ void setup() {
     server.on("/face", handleFace);
     server.on("/say", []() {                         // dashboard pushes current spoken line for the display caption
       if (server.hasArg("t"))
-        faceSetCaption(server.arg("t"), server.hasArg("ms") ? server.arg("ms").toInt() : 5000);
+        displaySetCaption(server.arg("t"), server.hasArg("ms") ? server.arg("ms").toInt() : 5000);
       server.sendHeader("Access-Control-Allow-Origin", "*");
       server.send(200, "text/plain", "ok");
     });
@@ -2020,7 +2020,7 @@ void loop() {
   if (millis() - lastFrame >= 40) {
     lastFrame = millis();
     bool offline = (WiFi.status() != WL_CONNECTED) || !internetOK;
-    faceDisplayRender(emotion, offline, millis());
+    displayRenderFace(emotion, offline, millis());
   }
 #endif
 
