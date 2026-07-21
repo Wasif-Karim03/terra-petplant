@@ -7,7 +7,7 @@ account_id = "cd0c63876f35a3aa92fbfc124bf6fa6f"
 # Secrets in plain vars — fine for a single personal unit (they only guard one plant).
 [vars]
 DEVICE_KEY  = "a140bae408bb79315ffbc34eb1192b70"
-OWNER_TOKEN = "6d64cb76521d7afe799274fd"
+OWNER_TOKEN = "7db73e87443ed0197ca15f6a"
 
 [[kv_namespaces]]
 binding = "TERRA"
