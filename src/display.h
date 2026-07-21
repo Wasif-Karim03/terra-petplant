@@ -15,6 +15,7 @@
 void displaySetup();
 void displayRenderFace(const String &emotion, bool offline, uint32_t t);
 void displaySetCaption(const String &text, uint32_t ms);
+void displayMessage(const String &line1, const String &line2);   // e.g. WiFi-setup hint
 
 // ---- bind to the selected concrete driver ----
 #if   DISPLAY_DRIVER == 1

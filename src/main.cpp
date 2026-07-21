@@ -21,6 +21,7 @@
 #include <WebServer.h>
 #include <ESPmDNS.h>
 #include <WiFiManager.h>   // captive-portal WiFi setup (no hardcoded credentials)
+#include <WiFiMulti.h>     // remembers multiple networks; joins whichever is in range
 #include <ArduinoJson.h>
 #include <LittleFS.h>
 #include <DHTesp.h>
@@ -77,8 +78,8 @@ const int LIGHT_PIN = 2;
 // These defaults are typical for a capacitive probe on the 12-bit/11dB ADC.
 // Bench readings 2025-07: dry-in-air ~2600, in-water ~1190. STILL NEEDS real
 // in-soil calibration (dry potting soil vs. just-watered) for accurate %.
-int SOIL_AIR_RAW   = 2600;   // 0%   (probe in open air / bone-dry)
-int SOIL_WATER_RAW = 1200;   // 100% (probe in water)
+int SOIL_AIR_RAW   = 2645;   // 0%   (measured 2026-07: probe in open air)
+int SOIL_WATER_RAW = 1130;   // 100% (measured 2026-07: water on the prongs)
 
 DHTesp dht;
 
@@ -247,37 +248,95 @@ void checkInternet() {
 // boot (or if saved WiFi fails) Terra opens an open hotspot "Terra-Setup"; the
 // customer connects their phone, the setup page pops up, they pick their home
 // WiFi + password, and it's saved to flash. Reachable afterwards at terra.local.
+// ---- saved-network list (NVS "nets"): home, school, hotspot... ----
+// She remembers several networks and joins whichever is in range, so you set up
+// each location once and never re-provision moving between them.
+static Preferences netPrefs;
+static bool netHas(const String &ssid) {
+  netPrefs.begin("nets", true);
+  int c = netPrefs.getInt("cnt", 0); bool f = false;
+  for (int i = 0; i < c; i++) if (netPrefs.getString(("s" + String(i)).c_str(), "") == ssid) { f = true; break; }
+  netPrefs.end(); return f;
+}
+static void netAdd(const String &ssid, const String &pass) {   // add new, or update password
+  if (!ssid.length()) return;
+  netPrefs.begin("nets", false);
+  int c = netPrefs.getInt("cnt", 0), idx = -1;
+  for (int i = 0; i < c; i++) if (netPrefs.getString(("s" + String(i)).c_str(), "") == ssid) { idx = i; break; }
+  if (idx < 0 && c < 8) { idx = c; netPrefs.putString(("s" + String(idx)).c_str(), ssid); netPrefs.putInt("cnt", c + 1); }
+  if (idx >= 0) netPrefs.putString(("p" + String(idx)).c_str(), pass);
+  netPrefs.end();
+  Serial.printf("[WiFi] remembered network: %s\n", ssid.c_str());
+}
+static void netClear() { netPrefs.begin("nets", false); netPrefs.clear(); netPrefs.end(); }
+static void netSeed() {   // per-deployment convenience: knows the CWRU device network out of the box
+  if (!netHas("CaseRegistered")) netAdd("CaseRegistered", "");   // open (MAC-registered)
+}
+
 void connectWiFi() {
   WiFi.mode(WIFI_STA);
   WiFi.setHostname("terra");
+  netSeed();
 
-  WiFiManager wm;
-  wm.setConfigPortalTimeout(180);       // if setup isn't finished in 3 min, continue offline
-  wm.setConnectTimeout(20);
-  wm.setClass("invert");                // dark theme for the portal
-  wm.setTitle("Terra - Pet Plant Setup");
-
-  Serial.println("[WiFi] connecting (or starting 'Terra-Setup' portal)...");
-  bool ok = wm.autoConnect("Terra-Setup");   // blocks during first-time setup only
-
-  if (ok) {
+  // 1) try every saved network — WiFiMulti joins the strongest one in range
+  netPrefs.begin("nets", true);
+  int c = netPrefs.getInt("cnt", 0);
+  WiFiMulti multi; int added = 0;
+  for (int i = 0; i < c; i++) {
+    String s = netPrefs.getString(("s" + String(i)).c_str(), "");
+    String p = netPrefs.getString(("p" + String(i)).c_str(), "");
+    if (s.length()) { multi.addAP(s.c_str(), p.c_str()); added++; }
+  }
+  netPrefs.end();
+  if (added) {
+    Serial.printf("[WiFi] trying %d saved network(s)...\n", added);
+    multi.run(14000);
+  }
+  if (WiFi.status() == WL_CONNECTED) {
     WiFi.setAutoReconnect(true);
-    WiFi.persistent(true);
-    Serial.print("[WiFi] Connected. IP: ");
-    Serial.print(WiFi.localIP());
-    Serial.print("  RSSI: "); Serial.print(WiFi.RSSI()); Serial.println(" dBm");
-    if (MDNS.begin("terra")) { MDNS.addService("http", "tcp", 80);
-      Serial.println("[mDNS] http://terra.local/"); }
+    Serial.printf("[WiFi] Connected to \"%s\"  IP: %s  RSSI: %d dBm\n",
+                  WiFi.SSID().c_str(), WiFi.localIP().toString().c_str(), (int)WiFi.RSSI());
+    if (MDNS.begin("terra")) { MDNS.addService("http", "tcp", 80); Serial.println("[mDNS] http://terra.local/"); }
+    checkInternet();
+    return;
+  }
+
+  // 2) nothing known in range -> open the setup portal (shows the MAC for campus WiFi)
+  WiFiManager wm;
+  wm.setConfigPortalTimeout(180);
+  wm.setConnectTimeout(20);
+  wm.setClass("invert");
+  wm.setTitle("Terra - Pet Plant Setup");
+  String info =
+    "<div style='background:#14301f;padding:12px;border-radius:10px;margin:10px 0;color:#e6ffe9;line-height:1.5'>"
+    "<b>Home WiFi:</b> pick your network below and enter the password.<br><br>"
+    "<b>School / campus WiFi?</b> First register this device's MAC on your campus device portal:<br>"
+    "<span style='font-size:18px;font-weight:700;letter-spacing:1px'>" + WiFi.macAddress() + "</span><br>"
+    "then pick the campus network (usually no password needed).</div>";
+  WiFiManagerParameter infoParam(info.c_str());
+  wm.addParameter(&infoParam);
+#if ENABLE_DISPLAY
+  // The plant tells her what to do — no instructions needed.
+  wm.setAPCallback([](WiFiManager *w) { displayMessage("Set me up on WiFi:", "join \"Terra-Setup\""); });
+#endif
+
+  Serial.printf("[WiFi] no known network in range -> 'Terra-Setup' portal (MAC %s)\n", WiFi.macAddress().c_str());
+  bool ok = wm.autoConnect("Terra-Setup");
+  if (ok) {
+    netAdd(WiFi.SSID(), WiFi.psk());     // remember it alongside the others
+    WiFi.setAutoReconnect(true);
+    Serial.printf("[WiFi] Connected to \"%s\"  IP: %s\n", WiFi.SSID().c_str(), WiFi.localIP().toString().c_str());
+    if (MDNS.begin("terra")) { MDNS.addService("http", "tcp", 80); }
     checkInternet();
   } else {
     Serial.println("[WiFi] setup portal timed out — continuing offline (voice still works).");
   }
 }
 
-// Forget saved WiFi and reboot back into setup mode (settings-page button).
+// Forget ALL saved networks and reboot into setup mode (dashboard/USB button).
 void resetWiFi() {
-  WiFiManager wm;
-  wm.resetSettings();
+  netClear();
+  WiFiManager wm; wm.resetSettings();
   delay(300);
   ESP.restart();
 }
@@ -1935,6 +1994,7 @@ void setup() {
     if (bc >= 3) {
       Preferences b2; b2.begin("boot", false); b2.putInt("cnt", 0); b2.end();
       Serial.println("[WiFi] 3x power-cycle -> forgetting WiFi, opening setup portal");
+      netClear();
       WiFiManager wm; wm.resetSettings();   // connectWiFi() below will now open the portal
     } else {
       Serial.printf("[BOOT] power-on count %d (3 in a row resets WiFi)\n", bc);

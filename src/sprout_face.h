@@ -276,3 +276,9 @@ static inline void faceDisplayRender(const String& emo, bool offline, unsigned l
 void displaySetup()                                                 { faceDisplaySetup(); }
 void displayRenderFace(const String &emo, bool offline, uint32_t t) { faceDisplayRender(emo, offline, t); }
 void displaySetCaption(const String &text, uint32_t ms)             { faceSetCaption(text, ms); }
+void displayMessage(const String &line1, const String &line2) {
+  if (!dispReady) return;
+  spr.fillScreen(C(0x081711)); spr.setTextColor(C(0xeafff2)); spr.setTextDatum(middle_center);
+  spr.setTextSize(2); spr.drawString(line1, 120, 104); spr.drawString(line2, 120, 138);
+  spr.pushSprite(0, 0);
+}
